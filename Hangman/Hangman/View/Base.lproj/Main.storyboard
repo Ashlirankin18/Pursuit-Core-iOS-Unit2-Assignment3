@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qL5-Wz-Uoz">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hangman View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HangmanViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-0n-Uvb">
+                                <rect key="frame" x="0.0" y="146" width="414" height="225"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="L9E-bD-vGh"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enster you letter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-b4-sO6">
+                                <rect key="frame" x="88" y="626" width="238" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="PlayerOne Enter your word" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7t-C3-i4N">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Qe0-St-jRU"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="none" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="BCr-hk-A0I">
+                                <rect key="frame" x="0.0" y="486" width="414" height="92"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="HZE-mn-WZe"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Nmber of Dash">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="38" name=".SFNSDisplay"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="BCr-hk-A0I" firstAttribute="top" secondItem="pVe-0n-Uvb" secondAttribute="bottom" constant="115" id="Bw7-T7-wtl"/>
+                            <constraint firstItem="BCr-hk-A0I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="T0T-Wi-kOC"/>
+                            <constraint firstItem="Y7t-C3-i4N" firstAttribute="leading" secondItem="pVe-0n-Uvb" secondAttribute="leading" id="TSv-u4-w6M"/>
+                            <constraint firstItem="BCr-hk-A0I" firstAttribute="centerX" secondItem="l2c-b4-sO6" secondAttribute="centerX" id="aug-lk-Foq"/>
+                            <constraint firstItem="Y7t-C3-i4N" firstAttribute="trailing" secondItem="pVe-0n-Uvb" secondAttribute="trailing" id="hUZ-UB-26t"/>
+                            <constraint firstItem="BCr-hk-A0I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hmW-iR-POx"/>
+                            <constraint firstItem="Y7t-C3-i4N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hqu-gk-tA0"/>
+                            <constraint firstItem="l2c-b4-sO6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="oZR-du-Dit"/>
+                            <constraint firstItem="pVe-0n-Uvb" firstAttribute="top" secondItem="Y7t-C3-i4N" secondAttribute="bottom" constant="8" symbolic="YES" id="qdg-vU-9td"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l2c-b4-sO6" secondAttribute="bottom" constant="206" id="qyY-Dp-R5r"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7t-C3-i4N" secondAttribute="trailing" id="r2V-LL-eb2"/>
+                            <constraint firstItem="Y7t-C3-i4N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="v3F-FG-7nt"/>
+                            <constraint firstItem="pVe-0n-Uvb" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BCr-hk-A0I" secondAttribute="trailing" id="wJL-SD-PQ5"/>
+                            <constraint firstItem="pVe-0n-Uvb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BCr-hk-A0I" secondAttribute="leading" id="xOK-RB-wcV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fr3-8o-XDd"/>
+                    <connections>
+                        <outlet property="PlayerOneWord" destination="Y7t-C3-i4N" id="Jd0-BG-VWY"/>
+                        <outlet property="hangmanImage" destination="pVe-0n-Uvb" id="9fY-6N-2cG"/>
+                        <outlet property="numberOfDashesDisplay" destination="BCr-hk-A0I" id="0AU-v5-aM2"/>
+                        <outlet property="playerOneWord" destination="Y7t-C3-i4N" id="6cA-7y-gqO"/>
+                        <outlet property="playerTwoEnters" destination="l2c-b4-sO6" id="Dkj-jI-ZQS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.75362318840587" y="26.116071428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lKI-sl-IT4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qL5-Wz-Uoz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VOI-Yw-l6h">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="m4s-FK-VGB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2L4-BL-bcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
+        </scene>
+    </scenes>
+</document>
