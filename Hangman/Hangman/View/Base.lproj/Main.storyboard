@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-0n-Uvb">
-                                <rect key="frame" x="0.0" y="146" width="414" height="225"/>
+                                <rect key="frame" x="0.0" y="146" width="414" height="268"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="225" id="L9E-bD-vGh"/>
+                                    <constraint firstAttribute="height" constant="268" id="L9E-bD-vGh"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enster you letter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-b4-sO6">
@@ -40,11 +40,11 @@
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="none" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="BCr-hk-A0I">
-                                <rect key="frame" x="0.0" y="486" width="414" height="92"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="none" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="BCr-hk-A0I">
+                                <rect key="frame" x="0.0" y="505" width="414" height="73"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="HZE-mn-WZe"/>
+                                    <constraint firstAttribute="height" constant="73" id="HZE-mn-WZe"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Nmber of Dash">
@@ -57,10 +57,18 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g35-mi-Jsx">
+                                <rect key="frame" x="20" y="713" width="374" height="113"/>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="BCr-hk-A0I" firstAttribute="top" secondItem="pVe-0n-Uvb" secondAttribute="bottom" constant="115" id="Bw7-T7-wtl"/>
+                            <constraint firstItem="g35-mi-Jsx" firstAttribute="centerX" secondItem="l2c-b4-sO6" secondAttribute="centerX" id="2fx-9Q-L3A"/>
+                            <constraint firstItem="g35-mi-Jsx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3Rx-xS-mtW"/>
+                            <constraint firstItem="g35-mi-Jsx" firstAttribute="top" secondItem="l2c-b4-sO6" secondAttribute="bottom" constant="57" id="BcT-Ol-kcV"/>
+                            <constraint firstItem="BCr-hk-A0I" firstAttribute="top" secondItem="pVe-0n-Uvb" secondAttribute="bottom" constant="91" id="Bw7-T7-wtl"/>
                             <constraint firstItem="BCr-hk-A0I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="T0T-Wi-kOC"/>
                             <constraint firstItem="Y7t-C3-i4N" firstAttribute="leading" secondItem="pVe-0n-Uvb" secondAttribute="leading" id="TSv-u4-w6M"/>
                             <constraint firstItem="BCr-hk-A0I" firstAttribute="centerX" secondItem="l2c-b4-sO6" secondAttribute="centerX" id="aug-lk-Foq"/>
@@ -72,6 +80,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l2c-b4-sO6" secondAttribute="bottom" constant="206" id="qyY-Dp-R5r"/>
                             <constraint firstAttribute="trailing" secondItem="Y7t-C3-i4N" secondAttribute="trailing" id="r2V-LL-eb2"/>
                             <constraint firstItem="Y7t-C3-i4N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="v3F-FG-7nt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g35-mi-Jsx" secondAttribute="bottom" constant="36" id="vbp-6a-xcE"/>
                             <constraint firstItem="pVe-0n-Uvb" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BCr-hk-A0I" secondAttribute="trailing" id="wJL-SD-PQ5"/>
                             <constraint firstItem="pVe-0n-Uvb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BCr-hk-A0I" secondAttribute="leading" id="xOK-RB-wcV"/>
                         </constraints>
@@ -81,6 +90,7 @@
                     <connections>
                         <outlet property="PlayerOneWord" destination="Y7t-C3-i4N" id="Jd0-BG-VWY"/>
                         <outlet property="hangmanImage" destination="pVe-0n-Uvb" id="9fY-6N-2cG"/>
+                        <outlet property="lettersNotInWord" destination="g35-mi-Jsx" id="PRF-tH-7pR"/>
                         <outlet property="numberOfDashesDisplay" destination="BCr-hk-A0I" id="0AU-v5-aM2"/>
                         <outlet property="playerOneWord" destination="Y7t-C3-i4N" id="6cA-7y-gqO"/>
                         <outlet property="playerTwoEnters" destination="l2c-b4-sO6" id="Dkj-jI-ZQS"/>
