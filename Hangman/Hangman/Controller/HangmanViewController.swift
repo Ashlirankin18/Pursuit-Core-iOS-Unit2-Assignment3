@@ -86,7 +86,7 @@ extension HangmanViewController: UITextFieldDelegate {
             playerTwoEnters.resignFirstResponder()
           strPlayerTwoEntered =  playerTwoEnters.text ?? "nothing entered"
           print(strPlayerTwoEntered)
-          let playerTwoEnteredCharacter = Character(strPlayerTwoEntered)
+      let playerTwoEnteredCharacter = Character(strPlayerTwoEntered)
             ForLoops(playerTwoEnteredCharacter)
             print(playeroneStringArray)
             numberOfDashesDisplay.text = playeroneStringArray.joined(separator: " ")
@@ -98,6 +98,11 @@ extension HangmanViewController: UITextFieldDelegate {
         }
     
         return true
+        
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        playerTwoEnters.clearsOnBeginEditing = (playerTwoEnters.text != nil)
+        
         
     }
     
