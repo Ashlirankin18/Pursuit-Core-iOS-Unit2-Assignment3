@@ -10,13 +10,15 @@ import Foundation
 
  struct GameState {
   var isGameOver: Bool
- static var numberOfGuesses = 7
-static var playerOneDashesArray: [String] = []
-static var playerOneStringArray:[String] = []
+    static var numberOfGuesses = 7
+    static var playerOneDashesArray: [String] = []
+    static var playerOneStringArray:[String] = []
     static var playerTwoRight:[String] = []
     static var savedWord = String()
-   static var playerTwoEnteredWordArr = [String]()
+    static var playerTwoEnteredWordArr = [String]()
+    static var allGuesses = [String]()
 }
 var savedWord = GameState.savedWord
 var playerTwoArray = GameState.playerTwoEnteredWordArr
 var numberOfGuesses = GameState.numberOfGuesses
+var allGuesses = GameState.allGuesses

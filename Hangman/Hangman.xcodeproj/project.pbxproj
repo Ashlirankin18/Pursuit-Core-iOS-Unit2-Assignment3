@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E90013021A89817003C6EA7 /* tenor.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E90012F21A89817003C6EA7 /* tenor.gif */; };
+		2E90013521A8D450003C6EA7 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90013421A8D450003C6EA7 /* HomePage.swift */; };
+		2E90013721A8D590003C6EA7 /* SinglePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90013621A8D590003C6EA7 /* SinglePlayer.swift */; };
 		2EB3B8E721A4A720002599CF /* HangmanBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3B8E621A4A720002599CF /* HangmanBrain.swift */; };
+		2EDEA65221A8D8FD00628789 /* SinglePlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEA65121A8D8FD00628789 /* SinglePlayerGame.swift */; };
 		57FCB5F421A36D3D00163B8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FCB5F321A36D3D00163B8E /* AppDelegate.swift */; };
 		57FCB5F621A36D3D00163B8E /* HangmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FCB5F521A36D3D00163B8E /* HangmanViewController.swift */; };
 		57FCB5F921A36D3D00163B8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FCB5F721A36D3D00163B8E /* Main.storyboard */; };
@@ -16,7 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E90012F21A89817003C6EA7 /* tenor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tenor.gif; path = ../../../tenor.gif; sourceTree = "<group>"; };
+		2E90013121A8981A003C6EA7 /* tenor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tenor.gif; sourceTree = "<group>"; };
+		2E90013421A8D450003C6EA7 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		2E90013621A8D590003C6EA7 /* SinglePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlayer.swift; sourceTree = "<group>"; };
 		2EB3B8E621A4A720002599CF /* HangmanBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanBrain.swift; sourceTree = "<group>"; };
+		2EDEA65121A8D8FD00628789 /* SinglePlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlayerGame.swift; sourceTree = "<group>"; };
 		57FCB5F021A36D3D00163B8E /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FCB5F321A36D3D00163B8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57FCB5F521A36D3D00163B8E /* HangmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -48,7 +57,10 @@
 		2EB3B8E921A4A737002599CF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2E90013421A8D450003C6EA7 /* HomePage.swift */,
 				57FCB5F521A36D3D00163B8E /* HangmanViewController.swift */,
+				2E90013621A8D590003C6EA7 /* SinglePlayer.swift */,
+				2EDEA65121A8D8FD00628789 /* SinglePlayerGame.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -95,6 +107,8 @@
 				2EB3B8E921A4A737002599CF /* Controller */,
 				57FCB5FA21A36D3E00163B8E /* Assets.xcassets */,
 				57FCB5FF21A36D3E00163B8E /* Info.plist */,
+				2E90013121A8981A003C6EA7 /* tenor.gif */,
+				2E90012F21A89817003C6EA7 /* tenor.gif */,
 			);
 			path = Hangman;
 			sourceTree = "<group>";
@@ -158,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57FCB5FE21A36D3E00163B8E /* LaunchScreen.storyboard in Resources */,
+				2E90013021A89817003C6EA7 /* tenor.gif in Resources */,
 				57FCB5FB21A36D3E00163B8E /* Assets.xcassets in Resources */,
 				57FCB5F921A36D3D00163B8E /* Main.storyboard in Resources */,
 			);
@@ -170,9 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDEA65221A8D8FD00628789 /* SinglePlayerGame.swift in Sources */,
 				2EB3B8E721A4A720002599CF /* HangmanBrain.swift in Sources */,
+				2E90013721A8D590003C6EA7 /* SinglePlayer.swift in Sources */,
 				57FCB5F621A36D3D00163B8E /* HangmanViewController.swift in Sources */,
 				57FCB5F421A36D3D00163B8E /* AppDelegate.swift in Sources */,
+				2E90013521A8D450003C6EA7 /* HomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
