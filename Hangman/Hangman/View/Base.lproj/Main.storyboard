@@ -18,12 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZhC-H7-LTQ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="331" width="414" height="353"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.41620399749999998" green="0.41620399749999998" blue="0.41620399749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="pickerView"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlb-NY-nuY">
+                                <rect key="frame" x="20" y="126" width="374" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="What Category Would You Like?">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="ChalkboardSE-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="P93-0E-oX3"/>
                     </view>
                     <connections>
@@ -32,29 +46,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOn-CP-etX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1252" y="-708"/>
+            <point key="canvasLocation" x="1250.7246376811595" y="-708.48214285714278"/>
         </scene>
         <!--Single Player Game-->
         <scene sceneID="qqy-VB-aXr">
             <objects>
-                <viewController id="aCG-xQ-hFf" customClass="SinglePlayerGame" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pickerViewStoryBoard" id="aCG-xQ-hFf" customClass="SinglePlayerGame" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F6m-cL-DUG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26Z-5a-eub">
-                                <rect key="frame" x="0.0" y="44" width="414" height="271"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="intropic" translatesAutoresizingMaskIntoConstraints="NO" id="26Z-5a-eub">
+                                <rect key="frame" x="0.0" y="44" width="414" height="303"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-9f-Vvh">
-                                <rect key="frame" x="20" y="355" width="374" height="104"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-9f-Vvh">
+                                <rect key="frame" x="20" y="355" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Label">
+                                    <fragment content="You have 7 guesses">
                                         <attributes>
-                                            <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="36" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -63,19 +77,29 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLN-mQ-0Os">
                                 <rect key="frame" x="93" y="684" width="236" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <color key="textColor" red="0.41620399749999998" green="0.41620399749999998" blue="0.41620399749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2v-wa-hLh">
                                 <rect key="frame" x="93" y="781" width="210" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgainButton:" destination="aCG-xQ-hFf" eventType="touchUpInside" id="ZY0-FM-LQz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VHd-m9-XUu"/>
                     </view>
+                    <connections>
+                        <outlet property="dashesDisplay" destination="Fqb-9f-Vvh" id="7Ic-ul-aoB"/>
+                        <outlet property="hangmanImage" destination="26Z-5a-eub" id="IIA-xm-FAa"/>
+                        <outlet property="playAgain" destination="c2v-wa-hLh" id="r5m-jv-a0g"/>
+                        <outlet property="playerInputField" destination="hLN-mQ-0Os" id="LZ5-hZ-fOi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFC-6G-Z0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,26 +120,48 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="QSb-qQ-LMg">
-                                <rect key="frame" x="0.0" y="138" width="414" height="264"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc0-rt-jtf">
+                                <rect key="frame" x="43" y="574" width="131" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc0-rt-jtf">
-                                <rect key="frame" x="0.0" y="673" width="414" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="hang1"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="KtO-83-DhW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="stickFigure" id="uQa-8S-P0e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1u2-Pn-NwH">
-                                <rect key="frame" x="-4" y="735" width="414" height="63"/>
+                                <rect key="frame" x="0.0" y="760" width="414" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Single Player"/>
                                 <connections>
-                                    <segue destination="Npk-gd-mDM" kind="show" id="zzq-Qp-ffB"/>
+                                    <segue destination="Npk-gd-mDM" kind="show" id="dcY-1p-UFH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oay-SR-tiZ">
+                                <rect key="frame" x="259" y="574" width="122" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="hang7-1"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="animated" id="FyO-Fm-wBf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oB-K7-vxZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Welcome to Hangman">
+                                        <attributes>
+                                            <color key="NSColor" red="0.93405075132062865" green="1" blue="0.96895255186231366" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="24" name="ChalkboardSE-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ready" translatesAutoresizingMaskIntoConstraints="NO" id="QSb-qQ-LMg">
+                                <rect key="frame" x="9" y="248" width="405" height="301"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="adi-Fl-IpF"/>
@@ -124,6 +170,7 @@
                     <connections>
                         <outlet property="MultiPlayerButton" destination="fc0-rt-jtf" id="Qlh-Gp-dgd"/>
                         <outlet property="SinglePlayerButton" destination="1u2-Pn-NwH" id="nym-2Z-3nS"/>
+                        <outlet property="animatedHangman" destination="oay-SR-tiZ" id="QDS-ID-RlJ"/>
                         <outlet property="welcomeImage" destination="QSb-qQ-LMg" id="sS6-Xg-U7w"/>
                         <outlet property="welcomeLabel" destination="DUO-ec-V1W" id="QDB-Zq-WMB"/>
                     </connections>
@@ -140,8 +187,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-0n-Uvb">
-                                <rect key="frame" x="0.0" y="146" width="414" height="268"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-0n-Uvb">
+                                <rect key="frame" x="0.0" y="146" width="414" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="268" id="L9E-bD-vGh"/>
@@ -176,30 +223,20 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="playAgainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HUo-dW-5Kr"/>
+                                </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5u8-0H-Epp">
-                                <rect key="frame" x="0.0" y="422" width="414" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="YOU LOSE!!">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="36" name=".SFNSText"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="none" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="BCr-hk-A0I">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="BCr-hk-A0I">
                                 <rect key="frame" x="0.0" y="531" width="414" height="73"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="HZE-mn-WZe"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="Nmber of Dash">
+                                    <fragment content="You Have 7 Guesses">
                                         <attributes>
+                                            <color key="NSBackgroundColor" red="0.0094325413046661317" green="0.00938697347227644" blue="0.0094781091370558235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="38" name=".SFNSDisplay"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -236,12 +273,11 @@
                         <outlet property="playAgainButton" destination="mgg-R3-AXm" id="8aw-Yf-y5s"/>
                         <outlet property="playerOneWord" destination="Y7t-C3-i4N" id="6cA-7y-gqO"/>
                         <outlet property="playerTwoEnters" destination="l2c-b4-sO6" id="Dkj-jI-ZQS"/>
-                        <outlet property="youLoseLabel" destination="5u8-0H-Epp" id="Jpc-L1-Upo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2283" y="221"/>
+            <point key="canvasLocation" x="2282.608695652174" y="220.98214285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oYv-Du-JVi">
@@ -263,6 +299,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hang1" width="150" height="129"/>
+        <image name="hang7-1" width="75" height="175"/>
         <image name="header" width="465.6917724609375" height="217.6602783203125"/>
+        <image name="intropic" width="334" height="276"/>
+        <image name="ready" width="4096" height="2160"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uQa-8S-P0e"/>
+    </inferredMetricsTieBreakers>
 </document>

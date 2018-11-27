@@ -13,83 +13,113 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var playerTwoEnters: UITextField!
     @IBOutlet weak var numberOfDashesDisplay: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
-    @IBOutlet weak var youLoseLabel: UILabel!
+    
     
     var strPlayerOneEntered = String()
     var strPlayerTwoEntered = String()
-    var strArray1 = String()
-    var strArray2 = [String]()
     var intArray = [Int]()
     var playeroneStringArray = [String]()
-    
-    
+    var stickImages = GameState.hangmanStickImages
+    var animatedImages = GameState.hangmanAnimatedImages
+    var imagesToBeUsed = [UIImage]()
+    var savedWordArray = [String]()
+   
     override func viewDidLoad() {
     super.viewDidLoad()
     playerOneWord.delegate = self
     playerTwoEnters.delegate = self
   }
+    
+    @IBAction func playAgainButton(_ sender: UIButton) {
+        
+        playerOneWord.isUserInteractionEnabled = true
+        playerTwoEnters.isUserInteractionEnabled = true
+        playerTwoEnters.isEnabled = true
+        playerOneWord.isEnabled = true
+        savedWord = ""
+        playerOneWord.text = nil
+        numberOfDashesDisplay.text = nil
+        playeroneStringArray.removeAll()
+        playerTwoEnters.text = ""
+        hangmanImage.image = nil
+        numberOfGuesses = 8
+        
+    }
+    func loadCorrectHangmanImage (){
+        if !stickImages.isEmpty {
+            imagesToBeUsed = stickImages
+        } else {
+            imagesToBeUsed = animatedImages
+        }
+    }
+
 }
 extension HangmanViewController: UITextFieldDelegate {
     fileprivate func NumberOfGuesses() {
         if !strPlayerOneEntered.lowercased().contains(strPlayerTwoEntered.lowercased()){
             numberOfGuesses -= 1
+            loadCorrectHangmanImage()
             switch numberOfGuesses {
-            case 7:
-                hangmanImage.image = UIImage.init(named: "hang1")
+            case 7 :
+                hangmanImage.image = imagesToBeUsed[6]
             case 6:
-                hangmanImage.image = UIImage.init(named: "hang2")
+                hangmanImage.image = imagesToBeUsed[5]
             case 5:
-                hangmanImage.image = UIImage.init(named: "hang3")
+                hangmanImage.image = imagesToBeUsed[4]
             case 4:
-                hangmanImage.image = UIImage.init(named: "hang4")
+                hangmanImage.image = imagesToBeUsed[3]
             case 3:
-                hangmanImage.image = UIImage.init(named: "hang5")
+                hangmanImage.image = imagesToBeUsed[2]
             case 2:
-                hangmanImage.image = UIImage.init(named: "hang6")
+                hangmanImage.image = imagesToBeUsed[1]
             case 1:
-                hangmanImage.image = UIImage.init(named: "hang7")
+                hangmanImage.image = imagesToBeUsed[0]
+                savedWord = ""
             default:
                 print("b")
                
             }
         }
     }
+    
     fileprivate func ForLoops(_ playerTwoEnteredCharacter: Character) {
         for (index,letter) in strPlayerOneEntered.enumerated(){
             if letter == playerTwoEnteredCharacter {
                 intArray.append(index)
             }
         }
+        
         for element in intArray {
             playeroneStringArray[element] = strPlayerTwoEntered
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        playerOneWord.resignFirstResponder()
         switch textField {
         
         case playerOneWord:
+            playerOneWord.resignFirstResponder()
              strPlayerOneEntered = playerOneWord.text ?? "nothing entered"
-            playeroneStringArray = Array(repeating: "⏤", count: strPlayerOneEntered.count)//displays the number of letters in the word
-             print(playeroneStringArray)
-            numberOfDashesDisplay.text = playeroneStringArray.joined(separator: " ") // controls the label
+            playeroneStringArray = Array(repeating: "⏤", count: strPlayerOneEntered.count)
+            numberOfDashesDisplay.text = playeroneStringArray.joined(separator: " ")
             savedWord = strPlayerOneEntered
-      
+           savedWordArray = [savedWord]
+       playerOneWord.isUserInteractionEnabled = true
+           
         case playerTwoEnters:
             playerTwoEnters.resignFirstResponder()
-          strPlayerTwoEntered =  playerTwoEnters.text ?? "nothing entered"
-          print(strPlayerTwoEntered)
+
+            strPlayerTwoEntered =  playerTwoEnters.text ?? "nothing entered"
+            guard strPlayerTwoEntered != "" else {return true}
             allGuesses.append(strPlayerTwoEntered.lowercased())
             if allGuesses.contains(strPlayerTwoEntered){
-        let playerTwoEnteredCharacter = Character(strPlayerTwoEntered)
+                let playerTwoEnteredCharacter = Character(strPlayerTwoEntered)
             ForLoops(playerTwoEnteredCharacter)
-            print(playeroneStringArray)
             numberOfDashesDisplay.text = playeroneStringArray.joined(separator: " ")
             NumberOfGuesses()
             intArray.removeAll()
             }
-            print(allGuesses)
+        
         
         default:
             print("Invalid",separator: "")
@@ -97,37 +127,44 @@ extension HangmanViewController: UITextFieldDelegate {
         if savedWord == playeroneStringArray.joined() {
             hangmanImage.image = UIImage(named: "youWin")
             textField.isEnabled = false
+            savedWord = ""
         }
         else if savedWord != playeroneStringArray.joined() && numberOfGuesses == 1 {
             textField.isEnabled = false
             hangmanImage.image = UIImage(named: "youLose")
+            hangmanImage.image = UIImage(named: "youLose")
+            numberOfDashesDisplay.text = "the random word was \(savedWordArray.joined(separator: " "))"
+            savedWord = ""
         }
      return true
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         playerTwoEnters.clearsOnBeginEditing = (playerTwoEnters.text != nil)
     }
+    
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
 
         return true
     }
+    
     fileprivate func restrictCharacterLength(_ string: String, _ range: NSRange) -> Bool {
         let characterCountLimit = 1
         let startingLength = playerTwoEnters.text?.count ?? 0
         let lengthToAdd = string.count
         let lengthToReplace = range.length
         let newLength = startingLength + lengthToAdd - lengthToReplace
+       
         return newLength <= characterCountLimit
     }
     
     fileprivate func limitsUserInputToLettersOnly(_ string: String, _ range: NSRange) -> Bool {
         let charactersAllowed = NSCharacterSet.letters
         if let rangeOfCharactersAllowed = string.rangeOfCharacter(from: charactersAllowed, options: .caseInsensitive) {
-            // make sure it's all of them
             let validCharacterCount = string.distance(from: rangeOfCharactersAllowed.lowerBound, to: rangeOfCharactersAllowed.upperBound)
             return validCharacterCount == string.count &&  restrictCharacterLength(string, range)
         } else  {
-            // none of the characters are from the allowed set
+           
             return false
         }
     }
@@ -137,5 +174,3 @@ extension HangmanViewController: UITextFieldDelegate {
         return limitsUserInputToLettersOnly(string, range)
     }
     }
-
-
