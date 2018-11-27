@@ -28,6 +28,7 @@ class HangmanViewController: UIViewController {
     super.viewDidLoad()
     playerOneWord.delegate = self
     playerTwoEnters.delegate = self
+    checksIftheResponderResigned()
   }
     
     @IBAction func playAgainButton(_ sender: UIButton) {
@@ -52,8 +53,13 @@ class HangmanViewController: UIViewController {
             imagesToBeUsed = animatedImages
         }
     }
-
+    func checksIftheResponderResigned() {
+        if !playerOneWord.resignFirstResponder(){
+            playerTwoEnters.isEnabled = false
+        }
+    }
 }
+
 extension HangmanViewController: UITextFieldDelegate {
     fileprivate func NumberOfGuesses() {
         if !strPlayerOneEntered.lowercased().contains(strPlayerTwoEntered.lowercased()){
@@ -96,9 +102,9 @@ extension HangmanViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        
         case playerOneWord:
             playerOneWord.resignFirstResponder()
+            playerTwoEnters.isEnabled = true
              strPlayerOneEntered = playerOneWord.text ?? "nothing entered"
             playeroneStringArray = Array(repeating: "⏤", count: strPlayerOneEntered.count)
             numberOfDashesDisplay.text = playeroneStringArray.joined(separator: " ")
@@ -108,7 +114,6 @@ extension HangmanViewController: UITextFieldDelegate {
            
         case playerTwoEnters:
             playerTwoEnters.resignFirstResponder()
-
             strPlayerTwoEntered =  playerTwoEnters.text ?? "nothing entered"
             guard strPlayerTwoEntered != "" else {return true}
             allGuesses.append(strPlayerTwoEntered.lowercased())
@@ -124,7 +129,8 @@ extension HangmanViewController: UITextFieldDelegate {
         default:
             print("Invalid",separator: "")
         }
-        if savedWord == playeroneStringArray.joined() {
+        
+        if savedWord == playeroneStringArray.joined() && playerOneWord.text != "" {
             hangmanImage.image = UIImage(named: "youWin")
             textField.isEnabled = false
             savedWord = ""
@@ -136,6 +142,7 @@ extension HangmanViewController: UITextFieldDelegate {
             numberOfDashesDisplay.text = "the random word was \(savedWordArray.joined(separator: " "))"
             savedWord = ""
         }
+        
      return true
     }
     
