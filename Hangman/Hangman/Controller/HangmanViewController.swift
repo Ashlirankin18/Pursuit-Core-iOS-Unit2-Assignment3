@@ -41,7 +41,7 @@ class HangmanViewController: UIViewController {
         numberOfDashesDisplay.text = nil
         playeroneStringArray.removeAll()
         playerTwoEnters.text = ""
-        hangmanImage.image = nil
+        hangmanImage.image = UIImage(named: "header")
         numberOfGuesses = 8
         
     }
