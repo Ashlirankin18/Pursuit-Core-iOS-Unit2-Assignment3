@@ -15,24 +15,40 @@ class HomePage: UIViewController {
     @IBOutlet weak var animatedHangman: UIButton!
     
     @IBOutlet weak var SinglePlayerButton: UIButton!
+    private var showHelp = true
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if showHelp {
+            showHelpPage()
+            showHelp.toggle()
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stickFigure" {
-          let nextViewController = segue.destination as? HangmanViewController
+            let nextViewController = segue.destination as? HangmanViewController
             nextViewController?.stickImages = [UIImage(named: "hang7"),UIImage(named: "hang6"),UIImage(named: "hang5"),UIImage(named: "hang4"),UIImage(named: "hang3"),UIImage(named: "hang2"),UIImage(named: "hang1")] as! [UIImage]
         }
         else if segue.identifier == "animated" {
             let nextViewController = segue.destination as? HangmanViewController
             nextViewController?.animatedImages = [UIImage(named: "hang7-1"),UIImage(named: "hang6-1"),UIImage(named: "hang5-1"),UIImage(named: "hang4-1"),UIImage(named: "hang3-1"),UIImage(named: "hang2-1"),UIImage(named: "hang1-1")] as! [UIImage]
-
+            
         }
         
         
     }
-   
-
+    
+    private func showHelpPage() {
+        let popVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpVC") as! PopUpViewController
+//        popVC.modalPresentationStyle = .currentContext
+//        popVC.modalTransitionStyle = .crossDissolve
+        present(popVC, animated: true, completion: nil)
+        //show(popVC, sender: nil)
+    }
+    
+    
 }

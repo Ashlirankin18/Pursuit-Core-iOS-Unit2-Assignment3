@@ -13,6 +13,7 @@ class SinglePlayerGame: UIViewController {
     @IBOutlet weak var dashesDisplay: UILabel!
     @IBOutlet weak var playerInputField: UITextField!
     @IBOutlet weak var playAgain: UIButton!
+    @IBOutlet weak var categoryDisplay: UILabel!
     var gamePlayData = [String]()
     var gameData = HangmanWordS.catogory
     var randomWordArray = [String]()
@@ -31,12 +32,16 @@ class SinglePlayerGame: UIViewController {
     func checksForRowTitle(){
         guard category == category else {return}
         if category == "Christmas"{
+            categoryDisplay.text = "You chose: \(category)"
             words = matrixOfWords[0]
         }else if category == "Technology"{
+            categoryDisplay.text = "You chose: \(category)"
             words = matrixOfWords[2]
         }else if category == "Random"{
+             categoryDisplay.text = "You chose: \(category)"
             words = matrixOfWords[1]
         }else if category == "Countries"{
+             categoryDisplay.text = "You chose: \(category)"
             words = matrixOfWords[3]
         }
         guard let word =  words.randomElement() else {return}

@@ -17,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhC-H7-LTQ">
+                            <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhC-H7-LTQ">
                                 <rect key="frame" x="0.0" y="331" width="414" height="353"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="backgroundColor" red="0.92960818527918776" green="0.92960818527918776" blue="0.92960818527918776" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="pickerView"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlb-NY-nuY">
@@ -30,6 +30,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="What Category Would You Like?">
                                         <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="18" name="ChalkboardSE-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -38,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZhC-H7-LTQ" firstAttribute="leading" secondItem="Jbl-95-hMS" secondAttribute="leading" id="5oA-J5-UmV"/>
                             <constraint firstItem="ZhC-H7-LTQ" firstAttribute="top" secondItem="Xlb-NY-nuY" secondAttribute="bottom" constant="80" id="6Jk-MU-wtf"/>
@@ -72,22 +73,6 @@
                                     <constraint firstAttribute="height" constant="303" id="Z1p-Ck-SVt"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-9f-Vvh">
-                                <rect key="frame" x="20" y="355" width="374" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="SRe-0z-5WP"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="You have 7 guesses">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="36" name=".SFNSText"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLN-mQ-0Os">
                                 <rect key="frame" x="93" y="684" width="236" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -105,6 +90,36 @@
                                     <action selector="playAgainButton:" destination="aCG-xQ-hFf" eventType="touchUpInside" id="ZY0-FM-LQz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXd-gp-dVG">
+                                <rect key="frame" x="20" y="355" width="374" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-9f-Vvh">
+                                <rect key="frame" x="20" y="485" width="374" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="SRe-0z-5WP"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="You have 7 guesses">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="36" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -124,6 +139,7 @@
                         <viewLayoutGuide key="safeArea" id="VHd-m9-XUu"/>
                     </view>
                     <connections>
+                        <outlet property="categoryDisplay" destination="mXd-gp-dVG" id="1I8-lG-E0J"/>
                         <outlet property="dashesDisplay" destination="Fqb-9f-Vvh" id="7Ic-ul-aoB"/>
                         <outlet property="hangmanImage" destination="26Z-5a-eub" id="IIA-xm-FAa"/>
                         <outlet property="playAgain" destination="c2v-wa-hLh" id="r5m-jv-a0g"/>
@@ -137,7 +153,7 @@
         <!--Home Page-->
         <scene sceneID="tUC-nG-8Ec">
             <objects>
-                <viewController id="8Xe-a7-dHk" customClass="HomePage" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondSegue" id="8Xe-a7-dHk" customClass="HomePage" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NOY-C5-OPa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,6 +354,69 @@
             </objects>
             <point key="canvasLocation" x="2282.608695652174" y="220.98214285714286"/>
         </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="R6s-sn-7ZJ">
+            <objects>
+                <viewController storyboardIdentifier="popUpVC" id="HqM-Pu-HAV" customClass="PopUpViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="eWI-ir-XnP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7t-Bq-ueg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <action selector="dismissButton:" destination="HqM-Pu-HAV" eventType="touchUpInside" id="z6y-pL-Jqq"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHW-eY-VFJ">
+                                <rect key="frame" x="20" y="178" width="374" height="511"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zP-ty-SCK">
+                                        <rect key="frame" x="8" y="8" width="358" height="495"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Welcome">
+                                                <attributes>
+                                                    <color key="NSBackgroundColor" red="0.96894828680203049" green="0.96894828680203049" blue="0.96894828680203049" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="Optima-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="1" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4zP-ty-SCK" firstAttribute="leading" secondItem="iHW-eY-VFJ" secondAttribute="leading" constant="8" id="8dV-Ej-aH1"/>
+                                    <constraint firstAttribute="bottom" secondItem="4zP-ty-SCK" secondAttribute="bottom" constant="8" id="KZ4-Tc-dJ5"/>
+                                    <constraint firstAttribute="trailing" secondItem="4zP-ty-SCK" secondAttribute="trailing" constant="8" id="LF2-Op-3dy"/>
+                                    <constraint firstItem="4zP-ty-SCK" firstAttribute="top" secondItem="iHW-eY-VFJ" secondAttribute="top" constant="8" id="SBM-ox-7hq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="iHW-eY-VFJ" firstAttribute="leading" secondItem="ggd-D2-7jo" secondAttribute="leading" constant="20" id="2WI-ey-2oL"/>
+                            <constraint firstItem="ggd-D2-7jo" firstAttribute="trailing" secondItem="iHW-eY-VFJ" secondAttribute="trailing" constant="20" id="FcV-9M-vBF"/>
+                            <constraint firstItem="ggd-D2-7jo" firstAttribute="trailing" secondItem="S7t-Bq-ueg" secondAttribute="trailing" id="Fsg-fJ-PE9"/>
+                            <constraint firstItem="ggd-D2-7jo" firstAttribute="bottom" secondItem="S7t-Bq-ueg" secondAttribute="bottom" id="IbK-xf-aWi"/>
+                            <constraint firstItem="ggd-D2-7jo" firstAttribute="bottom" secondItem="iHW-eY-VFJ" secondAttribute="bottom" constant="173" id="JrX-3n-OPG"/>
+                            <constraint firstItem="S7t-Bq-ueg" firstAttribute="top" secondItem="ggd-D2-7jo" secondAttribute="top" id="LWq-UI-lBx"/>
+                            <constraint firstItem="iHW-eY-VFJ" firstAttribute="top" secondItem="ggd-D2-7jo" secondAttribute="top" constant="134" id="Zug-BX-kfv"/>
+                            <constraint firstItem="S7t-Bq-ueg" firstAttribute="leading" secondItem="ggd-D2-7jo" secondAttribute="leading" id="f9u-kj-nqF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ggd-D2-7jo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KbM-WV-une"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="4zP-ty-SCK" id="JBS-7n-NTz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HgM-uf-BiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="286.95652173913044" y="-382.36607142857139"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="oYv-Du-JVi">
             <objects>
@@ -349,12 +428,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8Xe-a7-dHk" kind="relationship" relationship="rootViewController" id="9Rd-9T-2Wl"/>
+                        <segue destination="8Xe-a7-dHk" kind="relationship" relationship="rootViewController" id="yH3-ch-PPf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Luw-F9-TvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347.82608695652175" y="220.98214285714286"/>
+            <point key="canvasLocation" x="-413" y="221"/>
         </scene>
     </scenes>
     <resources>

@@ -25,6 +25,7 @@ class SinglePlayer: UIViewController {
         catagoryPicker.delegate = self
     }
     
+    
     }
 
 
@@ -41,10 +42,11 @@ extension SinglePlayer:UIPickerViewDelegate {
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "pickerViewStoryBoard") as? SinglePlayerGame else {return}
             vc.category = titleForRow
             vc.matrixOfWords = words
-        
+            
         present(vc, animated: true, completion: nil)
        
     }
+
     }
 
 extension SinglePlayer:UIPickerViewDataSource{
