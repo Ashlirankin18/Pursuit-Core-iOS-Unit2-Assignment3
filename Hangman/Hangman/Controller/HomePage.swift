@@ -13,8 +13,7 @@ class HomePage: UIViewController {
     @IBOutlet weak var welcomeImage: UIImageView!
     @IBOutlet weak var MultiPlayerButton: UIButton!
     @IBOutlet weak var animatedHangman: UIButton!
-    
-    @IBOutlet weak var SinglePlayerButton: UIButton!
+
     private var showHelp = true
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +43,8 @@ class HomePage: UIViewController {
     
     private func showHelpPage() {
         let popVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpVC") as! PopUpViewController
-//        popVC.modalPresentationStyle = .currentContext
-//        popVC.modalTransitionStyle = .crossDissolve
         present(popVC, animated: true, completion: nil)
-        //show(popVC, sender: nil)
+        
     }
     
     

@@ -14,7 +14,6 @@ class SinglePlayer: UIViewController {
     
     var hangmanWords = HangmanWordS.catogory
     var keys = String()
-    
     var titleForRow = String()
     let category = HangmanWordS.catogory.map { $0.catogories }
     let words = HangmanWordS.catogory.map {$0.words}
@@ -24,10 +23,8 @@ class SinglePlayer: UIViewController {
         catagoryPicker.dataSource = self
         catagoryPicker.delegate = self
     }
-    
-    
+   
     }
-
 
 extension SinglePlayer:UIPickerViewDelegate {
     
@@ -38,15 +35,18 @@ extension SinglePlayer:UIPickerViewDelegate {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "pickerViewStoryBoard") as? SinglePlayerGame else {return}
-            vc.category = titleForRow
+            vc.category = category[row]
             vc.matrixOfWords = words
-            
         present(vc, animated: true, completion: nil)
-       
     }
-
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+     let myCategoryData =  category[row]
+        let attributedTitle = NSAttributedString(string: myCategoryData, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 15.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
+    
+    return attributedTitle
+    }
+  
     }
 
 extension SinglePlayer:UIPickerViewDataSource{

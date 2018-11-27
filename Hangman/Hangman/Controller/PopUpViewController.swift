@@ -42,5 +42,6 @@ class PopUpViewController: UIViewController {
     else{return}
     present( vc, animated: true, completion: nil)
     vc.modalPresentationStyle = .overCurrentContext
+        
 }
 }

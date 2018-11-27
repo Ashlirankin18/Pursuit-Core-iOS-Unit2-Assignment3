@@ -28,6 +28,7 @@ class SinglePlayerGame: UIViewController {
         super.viewDidLoad()
         playerInputField.delegate = self
         checksForRowTitle()
+    
     }
     func checksForRowTitle(){
         guard category == category else {return}
